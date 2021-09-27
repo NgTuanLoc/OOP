@@ -39,6 +39,10 @@ int main(int argc, const char * argv[]) {
         cin>>choice;
         cout<<endl;
         
+        if (choice ==0) {
+            cout<<"System shut down !!!"<<endl;
+            break;
+        }
         if (choice !=1) {
             if (f1.is_null || f2.is_null){
                 cout<<"Fraction must not be empty!!!"<<endl;
@@ -46,9 +50,6 @@ int main(int argc, const char * argv[]) {
             }
         }
         switch (choice) {
-            case 0:
-                cout<<"System shut down..."<<endl;
-                break;
             case 1:
                 set_fraction(f1);
                 set_fraction(f2);
