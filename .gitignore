@@ -34,3 +34,5 @@
 # Dev file
 .DS_Store
 run
+.vscode
+*.xcodeproj

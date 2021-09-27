@@ -10,8 +10,8 @@ bool is_perfect(int);
 bool is_palindrome(int);
 
 int main(){
+    int x = 0;
     do{
-        int x = 0;
         cout<<"Enter your number : ";
         cin>>x;
         if((!is_prime(x) && !is_square(x) && !is_perfect(x) && !is_palindrome(x)) || x<0){

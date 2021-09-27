@@ -4,7 +4,7 @@
 
 #include <iostream>
 using namespace std;
-// Fragtion = numerator, denominator
+// Fragtion = numerator/ denominator
 
 class Fraction{
   private:
