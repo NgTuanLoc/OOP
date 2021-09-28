@@ -75,11 +75,13 @@ fraction mul_fraction(fraction f1, fraction f2){
     fraction mul;
     mul.num = f1.num*f2.num ;
     mul.den = f1.den*f2.den;
+    reduce_fraction(mul);
     return mul;
 }
 fraction div_fraction(fraction f1, fraction f2){
     fraction div;
     div.num = f1.num*f2.den;
     div.den = f1.den*f2.num;
+    reduce_fraction(div);
     return div;
 }

@@ -40,7 +40,7 @@ int main(int argc, const char * argv[]) {
         cout<<endl;
         
         if (choice ==0) {
-            cout<<"System shut down !!!"<<endl;
+            cout<<"System shutdown !!!"<<endl;
             break;
         }
         if (choice !=1) {
