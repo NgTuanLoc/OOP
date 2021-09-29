@@ -82,10 +82,12 @@ int main(int argc, const char * argv[]) {
                 cout<<"Check class has poor status student: "<<check_poor_status_student(class1)<<endl;
                 break;
             case 8:
-                
+                sort_student_list_by_scholar(class1);
+                output_student_list(class1);
                 break;
             case 9:
-                
+                cout<<"Searching student ... "<<endl;
+                search_student(class1);
                 break;
             default:
                 cout<<"Invalid choice !"<<endl;

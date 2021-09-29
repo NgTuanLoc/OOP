@@ -102,16 +102,121 @@ string check_poor_status_student(cm class_list){
 }
 
 void sort_student_list_by_scholar(cm &class_list){
-    cm temp_class_list;
-    temp_class_list.is_null=false;
-    temp_class_list.number_of_member=class_list.number_of_member;
-    for (int i = 0; i < class_list.number_of_member; i++)
-    {
-        
+    int number_of_scholarship_type = 3;
+    string type_of_scholarship[3] = {"null", "1M VND scholarship", "2M VND scholarship"};
+    cm temp;
+    int temp_index=0;
+    while (number_of_scholarship_type!=0) {
+        number_of_scholarship_type--;
+        for (int i=0; i<class_list.number_of_member; i++) {
+            if (!type_of_scholarship[number_of_scholarship_type].compare(class_list.student_list[i].scholar)) {
+                temp.student_list[temp_index] = class_list.student_list[i];
+                temp_index++;
+            }
+        }
+    }
+    for (int i=0; i<class_list.number_of_member; i++){
+        class_list.student_list[i] = temp.student_list[i];
     }
 }
 
-student search_student(cm class_list){
-    student target_student;
-    return target_student;
+void search_student(cm class_list){
+    int choice;
+    cout<<"1. Search by id"<<endl;
+    cout<<"2. Search by name"<<endl;
+    cout<<"3. Search by average score"<<endl;
+    cout<<"4. Search by scholarship"<<endl;
+    cin>>choice;
+    cout<<endl;
+    
+    switch (choice) {
+        case 1:
+            search_student_by_id(class_list);
+            break;
+        case 2:
+            search_student_by_name(class_list);
+            break;
+        case 3:
+            search_student_by_avg_score(class_list);
+            break;
+        case 4:
+            search_student_by_scholarship(class_list);
+            break;
+        default:
+            cout<<"Invalid choice"<<endl;
+            break;
+    }
+}
+
+void search_student_by_id(cm class_list){
+    int id;
+    bool notFound=true;
+    cout<<"Enter student's id: ";
+    cin>>id;
+    cout<<endl;
+    cout<<"ID"<<setw(width) << setfill(separator)<<"Name"<<setw(width) << setfill(separator)<<"Math score"<<setw(width) << setfill(separator)<<"Literature"<<setw(width) << setfill(separator)<<"Status"<<setw(width) << setfill(separator)<<"Scholarship"<<endl;
+    for (int i=0; i<class_list.number_of_member; i++) {
+        if(class_list.student_list[i].id==id){
+            output_student(class_list.student_list[i]);
+            notFound = false;
+        }
+    }
+    if (notFound) {
+        cout<<"Student Not Foud "<<endl;
+    }
+}
+
+void search_student_by_name(cm class_list){
+    string name;
+    bool notFound=true;
+    cin.ignore();
+    cout<<"Enter student's name: ";
+    getline(cin, name);
+    cout<<endl;
+    cout<<"ID"<<setw(width) << setfill(separator)<<"Name"<<setw(width) << setfill(separator)<<"Math score"<<setw(width) << setfill(separator)<<"Literature"<<setw(width) << setfill(separator)<<"Status"<<setw(width) << setfill(separator)<<"Scholarship"<<endl;
+    for (int i=0; i<class_list.number_of_member; i++) {
+        if(!class_list.student_list[i].name.compare(name)){
+            output_student(class_list.student_list[i]);
+            notFound = false;
+        }
+    }
+    if (notFound) {
+        cout<<"Student Not Foud "<<endl;
+    }
+}
+void search_student_by_avg_score(cm class_list){
+    float avg_score;
+    bool notFound=true;
+    cout<<"Enter student's average score: ";
+    cin>>avg_score;
+    cout<<endl;
+    cout<<"ID"<<setw(width) << setfill(separator)<<"Name"<<setw(width) << setfill(separator)<<"Math score"<<setw(width) << setfill(separator)<<"Literature"<<setw(width) << setfill(separator)<<"Status"<<setw(width) << setfill(separator)<<"Scholarship"<<endl;
+    for (int i=0; i<class_list.number_of_member; i++) {
+        if(get_student_avg_score(class_list.student_list[i])==avg_score){
+            output_student(class_list.student_list[i]);
+            notFound = false;
+        }
+    }
+    if (notFound) {
+        cout<<"Student Not Foud "<<endl;
+    }
+};
+
+void search_student_by_scholarship(cm class_list){
+    string scholarship;
+    bool notFound=true;
+    cin.ignore();
+    cout<<"Enter student's scholarship: ";
+    getline(cin, scholarship);
+    cout<<endl;
+    cout<<"ID"<<setw(width) << setfill(separator)<<"Name"<<setw(width) << setfill(separator)<<"Math score"<<setw(width) << setfill(separator)<<"Literature"<<setw(width) << setfill(separator)<<"Status"<<setw(width) << setfill(separator)<<"Scholarship"<<endl;
+    for (int i=0; i<class_list.number_of_member; i++) {
+        if(!class_list.student_list[i].scholar.compare(scholarship)){
+            output_student(class_list.student_list[i]);
+            notFound = false;
+        }
+    }
+    if (notFound) {
+        cout<<"Student Not Foud "<<endl;
+    }
 }
