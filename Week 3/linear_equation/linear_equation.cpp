@@ -41,7 +41,12 @@ void linear_equation::display_result(){
     if (a!=0) {
         cout<<"Result x = "<<this->solve()<<endl;
     }  else{
-        cout<<"x = ∞"<<endl;
+        if (b==0) {
+            cout<<"x = ∞"<<endl;
+        } else{
+            cout<<"No x satisfied!!!"<<endl;
+        }
+        
     }
 }
 
