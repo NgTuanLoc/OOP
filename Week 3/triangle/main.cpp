@@ -27,6 +27,7 @@ void menu(){
     cout<<"3/ Classify triangle"<<endl;
     cout<<"4/ Get Perimeter of triangle"<<endl;
     cout<<"5/ Get Area of triangle"<<endl;
+    cout<<"0/ Shutdown system"<<endl;
 }
 
 int main(int argc, const char * argv[]) {

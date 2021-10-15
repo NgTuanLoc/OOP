@@ -113,7 +113,7 @@ double triangle::get_triangle_area(){
 string triangle::classify_triangle(){
     string result;
     if (!check_valid_triangle()) {
-        result = "Invalid Triangle";
+        return NULL;
     } else if(a==b && b==c){
         result = "Equilateral Triangle";
     } else if(a==b || b==c || a==c){
