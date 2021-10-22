@@ -22,7 +22,7 @@ bool complex::is_null_check(){
     return is_null ? true: false;
 }
 
-bool complex::is_zero_check()(){
+bool complex::is_zero_check(){
     return real*img==0 ? true: false;
 }
 
