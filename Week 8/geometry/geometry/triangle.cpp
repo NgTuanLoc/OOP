@@ -18,7 +18,6 @@ Triangle::Triangle(Point a, Point b, Point c):_a(a), _b(b), _c(c){
         cout<<"Invalid input"<<endl;
         cin>>*this;
     }
-    count++;
 }
 
 void Triangle::set_a(Point a){
@@ -51,7 +50,7 @@ Point Triangle::get_c(){
     return _c;
 }
 
-int Triangle::get_count(){
+int Point::get_count(){
     return count;
 }
 

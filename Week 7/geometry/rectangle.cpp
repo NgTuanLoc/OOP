@@ -3,7 +3,7 @@
 //  geometry
 //
 //  Created by Macintosh HD on 15/11/2021.
-//
+
 
 #include "rectangle.hpp"
 
@@ -14,7 +14,7 @@ Rectangle::Rectangle(){
 }
 
 Rectangle::Rectangle(Point a, Point b, Point c, Point d):_a(a), _b(b), _c(b), _d(d){
-    if (!valid_Rectangle()) {
+    if (!valid_rectangle()) {
         cout<<"Invalid input"<<endl;
         cin>>*this;
     }
@@ -60,27 +60,27 @@ Point Rectangle::get_d(){
     return _d;
 }
 
-int Point::get_count(){
+int Rectangle::get_count(){
     return count;
 }
 
-bool Rectangle::valid_Rectangle(){
+bool Rectangle::valid_rectangle(){
     double center_x = (_a.get_x() + _b.get_x() + _c.get_x() + _d.get_x())/4;
     double center_y = (_a.get_y() + _b.get_y() + _c.get_y() + _d.get_y())/4;
-    
+
     Point center_point(center_x, center_y);
     double dd1 = center_point.get_distance(_a);
     double dd2 = center_point.get_distance(_b);
     double dd3 = center_point.get_distance(_c);
     double dd4 = center_point.get_distance(_d);
-    
+
     return dd1==dd2 && dd1==dd3 && dd1==dd4;
 }
 
 double Rectangle::get_perimeter(){
     double A = _a.get_distance(_b);
     double B = _b.get_distance(_c);
-    
+
     return (A+B)*2;
 }
 
@@ -116,7 +116,8 @@ istream& operator>>(istream& in, Rectangle& target){
         cin>>target._a;
         cin>>target._b;
         cin>>target._c;
-    }while(target.valid_Rectangle());
+        cin>>target._d;
+    }while(target.valid_rectangle());
     return in;
 }
 

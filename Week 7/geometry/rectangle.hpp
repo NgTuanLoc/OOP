@@ -33,7 +33,7 @@ public:
     Point get_c();
     Point get_d();
     
-    bool valid_Rectangle();
+    bool valid_rectangle();
     double get_perimeter();
     double get_area();
     string get_Rectangle_type();
