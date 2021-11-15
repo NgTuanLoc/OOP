@@ -113,10 +113,10 @@ Rectangle::~Rectangle(){
 
 istream& operator>>(istream& in, Rectangle& target){
     do{
-        cin>>target._a;
-        cin>>target._b;
-        cin>>target._c;
-        cin>>target._d;
+        in>>target._a;
+        in>>target._b;
+        in>>target._c;
+        in>>target._d;
     }while(target.valid_rectangle());
     return in;
 }

@@ -24,28 +24,47 @@
 #include "point.hpp"
 #include "triangle.hpp"
 #include "rectangle.hpp"
+#include "circle.hpp"
+
 #include <iostream>
 using namespace std;
 
 int main(int argc, const char * argv[]) {
-//    Point a;
-//    cin>>a;
-//    cout<<a;
-//    Point b;
-//    cin>>b;
-//    cout<<b;
-//
-//    cout<<a.is_coincide_check(b)<<endl;
-//    cout<<a.get_distance(b)<<endl;
-//    cout<<a.get_oposite_point()<<endl;
+    Point point_1;
+    cin>>point_1;
+    cout<<point_1;
+    Point point_2;
+    cin>>point_2;
+    cout<<point_2;
+
+    cout<<point_1.is_coincide_check(point_2)<<endl;
+    cout<<point_1.get_distance(point_2)<<endl;
+    cout<<point_1.get_oposite_point()<<endl;
 
     Point a(1, -2);
     Point b(2, 1);
     Point c(-1, 4);
-    Triangle test(a, b, c);
-    cout<<test<<endl;
-    cout<<test.get_perimeter()<<endl;
-    cout<<test.get_area()<<endl;
-    cout<<test.get_triangle_type()<<endl;
+    Triangle tri(a, b, c);
+    cout<<tri<<endl;
+    cout<<tri.get_perimeter()<<endl;
+    cout<<tri.get_area()<<endl;
+    cout<<tri.get_triangle_type()<<endl;
+    
+    Point m(1, -2);
+    Point n(2, 1);
+    Point k(-1, 4);
+    Point l(-1, 4);
+    Rectangle rect(m, n, k, l);
+    cout<<rect<<endl;
+    cout<<rect.get_perimeter()<<endl;
+    cout<<rect.get_area()<<endl;
+    cout<<rect.get_Rectangle_type()<<endl;
+    
+    Point o(0, 0);
+    Circle cir(o, 3);
+    cout<<cir<<endl;
+    cout<<cir.get_perimeter()<<endl;
+    cout<<cir.get_area()<<endl;
+    
     return 0;
 }

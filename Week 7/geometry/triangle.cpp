@@ -116,9 +116,9 @@ Triangle::~Triangle(){
 
 istream& operator>>(istream& in, Triangle& target){
     do{
-        cin>>target._a;
-        cin>>target._b;
-        cin>>target._c;
+        in>>target._a;
+        in>>target._b;
+        in>>target._c;
     }while(target.valid_triangle());
     return in;
 }
