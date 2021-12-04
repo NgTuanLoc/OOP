@@ -13,10 +13,10 @@
 using namespace std;
 
 class Point_2D{
-private:
+protected:
     double _x;
     double _y;
-    static int count;
+    
 public:
     Point_2D();
     Point_2D(double);
@@ -29,14 +29,16 @@ public:
     
     double get_x();
     double get_y();
-    static int get_count();
-        
+    
     bool is_coincide_check(Point_2D);
     double get_distance(Point_2D);
     Point_2D get_oposite_point();
     void move(double, double);
-    void operator = (Point_2D);
     
+    double get_perimeter(Point_2D, Point_2D);
+    double get_area(Point_2D, Point_2D);
+    
+    void operator = (Point_2D);
     friend istream& operator>>(istream&, Point_2D&);
     friend ostream& operator<<(ostream&, Point_2D);
 };

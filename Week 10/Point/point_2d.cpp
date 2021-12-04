@@ -7,22 +7,17 @@
 
 #include "point_2d.hpp"
 
-int Point_2D::count=0;
-
 Point_2D::Point_2D(){
     _x = 0;
     _y = 0;
-    count++;
 }
 
 Point_2D::Point_2D(double x){
     set_xy(x, 0);
-    count++;
 }
 
 Point_2D::Point_2D(double x, double y){
     set_xy(x, y);
-    count++;
 }
 
 void Point_2D::operator=(Point_2D a){
@@ -50,10 +45,6 @@ double Point_2D::get_y(){
     return _y;
 }
 
-int Point_2D::get_count(){
-    return count;
-}
-
 bool Point_2D::is_coincide_check(Point_2D a){
     if (_x == a.get_x() && _y == a.get_y()) {
         return true;
@@ -75,8 +66,25 @@ void Point_2D::move(double x, double y){
     set_y(this->_y+y);
 }
 
+double Point_2D::get_perimeter(Point_2D d1, Point_2D d2){
+    double a = this->get_distance(d1);
+    double b = d1.get_distance(d2);
+    double c = d2.get_distance(*this);
+    double p = a+b+c;
+    return p;
+}
+
+double Point_2D::get_area(Point_2D d1, Point_2D d2){
+    double a = this->get_distance(d1);
+    double b = d1.get_distance(d2);
+    double c = d2.get_distance(*this);
+    double p = a+b+c;
+    
+    double area = sqrt((p/2)*(p-a)*(p-b)*(p-c));
+    return area;
+}
+
 Point_2D::~Point_2D(){
-    count--;
 }
 
 istream& operator>>(istream& in,Point_2D& a){
