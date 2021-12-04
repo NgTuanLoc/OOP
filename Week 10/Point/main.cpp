@@ -8,6 +8,7 @@
 #include <iostream>
 #include "point_2d.hpp"
 #include "point_3d.hpp"
+#include "point_3d_color.hpp"
 
 int main(int argc, const char * argv[]) {
     Point_2D a(2, 3);
@@ -21,5 +22,11 @@ int main(int argc, const char * argv[]) {
     Point_3D z(3, 1, -3);
     double test1 = x.get_area(y, z);
     cout<<test1<<endl;
+    
+    Point_3D_Color m(2, 3, 1, 23, 67, 45);
+    Point_3D_Color n(4, 2, -2, 23, 54, 34);
+    Point_3D_Color l(3, 1, -3, 23, 67, 45);
+    bool test2 = m.is_coincide_color_check(n);
+    cout<<test2<<endl;
     return 0;
 }

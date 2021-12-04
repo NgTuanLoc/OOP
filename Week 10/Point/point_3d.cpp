@@ -6,7 +6,9 @@
 //
 
 #include "point_3d.hpp"
-Point_3D::Point_3D(double x, double y, double z): Point_2D(x, y), _z(z){}
+Point_3D::Point_3D(double x, double y, double z): Point_2D(x, y), _z(z){
+    _z = z;
+}
 
 double Point_3D::get_z(){
     return _z;
