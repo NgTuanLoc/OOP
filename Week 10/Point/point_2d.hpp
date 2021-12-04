@@ -30,6 +30,9 @@ public:
     double get_x();
     double get_y();
     
+    void input();
+    void print();
+    
     bool is_coincide_check(Point_2D);
     double get_distance(Point_2D);
     Point_2D get_oposite_point();

@@ -87,6 +87,17 @@ double Point_2D::get_area(Point_2D d1, Point_2D d2){
 Point_2D::~Point_2D(){
 }
 
+void Point_2D::input(){
+    cout<<"Enter x: ";
+    cin>>_x;
+    cout<<"\nEnter y: ";
+    cin>>_y;
+    cout<<endl;
+}
+void Point_2D::print(){
+    cout<<"Point ("<<_x<<", "<<_y<<") ";
+}
+
 istream& operator>>(istream& in,Point_2D& a){
     cout<<"Enter x: ";
     in>>a._x;

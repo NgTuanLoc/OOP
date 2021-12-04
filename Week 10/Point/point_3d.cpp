@@ -59,6 +59,20 @@ double Point_3D::get_area(Point_3D d1, Point_3D d2){
     return area;
 }
 
+void Point_3D::input(){
+    cout<<"Enter x: ";
+    cin>>_x;
+    cout<<"\nEnter y: ";
+    cin>>_y;
+    cout<<"\nEnter z: ";
+    cin>>_z;
+    cout<<endl;
+}
+
+void Point_3D::print(){
+    cout<<"Point ("<<_x<<", "<<_y<<", "<<_z<<")";
+}
+
 istream& operator>>(istream& in, Point_3D& d){
     cout<<"Enter x: ";
     in>>d._x;

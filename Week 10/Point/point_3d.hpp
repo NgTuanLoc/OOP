@@ -25,6 +25,9 @@ public:
     Point_3D get_oposite_point();
     void move(double, double, double);
     
+    void input();
+    void print();
+    
     double get_perimeter(Point_3D, Point_3D);
     double get_area(Point_3D, Point_3D);
     
